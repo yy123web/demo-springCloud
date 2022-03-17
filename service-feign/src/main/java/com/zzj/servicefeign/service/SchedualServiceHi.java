@@ -2,6 +2,7 @@ package com.zzj.servicefeign.service;
 
 import com.zzj.servicefeign.dto.UserDTO;
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +18,7 @@ public interface SchedualServiceHi {
     @RequestMapping(value = "/add")
     String add(@RequestBody UserDTO userDTO);
     @RequestMapping(value = "/del")
+    @Async
     String del(@RequestParam(value = "id") Integer id);
     @RequestMapping(value = "/edit")
     String edit(@RequestBody UserDTO userDTO);

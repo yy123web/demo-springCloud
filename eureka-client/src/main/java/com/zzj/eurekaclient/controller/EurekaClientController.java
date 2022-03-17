@@ -53,7 +53,7 @@ public class EurekaClientController {
     @ResponseBody
     public String add(@RequestBody User user) {
         userService.add(user);
-        return "新增成功";
+        return "签约成功";
     }
 
     @RequestMapping(value = "/del")

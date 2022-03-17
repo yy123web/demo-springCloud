@@ -3,6 +3,7 @@ package com.zzj.eurekaclient.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.zzj.eurekaclient.dao.UserDao;
 import com.zzj.eurekaclient.pojo.User;
 import com.zzj.eurekaclient.service.UserService;
@@ -16,7 +17,7 @@ import java.util.List;
  * @date 2022年03月04日 9:59
  */
 @Service
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl extends ServiceImpl<UserDao,User> implements UserService {
     @Autowired(required = false)
     private UserDao userDao;
 
@@ -35,6 +36,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<User> queryAll() {
+
         return userDao.selectList(null);
     }
 
